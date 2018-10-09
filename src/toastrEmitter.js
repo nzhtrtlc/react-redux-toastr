@@ -1,4 +1,4 @@
-import {mapToToastrMessage} from './utils.js';
+import { mapToToastrMessage } from './utils.js';
 import EventEmitter from 'eventemitter3';
 const emitter = new EventEmitter();
 
@@ -18,6 +18,7 @@ actions.clean = () => emitter.emit('clean/toastr');
 actions.removeByType = (type) => emitter.emit('removeByType/toastr', type);
 
 actions.remove = (id) => emitter.emit('remove/toastr', id);
+actions.update = (id, payload) => emitter.emit('update/toastr', { id, payload });
 
 actions.confirm = (...args) => {
   emitter.emit('toastr/confirm', {
